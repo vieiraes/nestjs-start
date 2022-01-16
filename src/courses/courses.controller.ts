@@ -1,33 +1,20 @@
-import { CoursesService } from "./courses.service";
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Param,
-  Patch,
-  Post,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post } from '@nestjs/common';
 
+import { CoursesService } from './courses.service';
 
-// #TODO: criar novas rotas
 // ROTA /courses
 @Controller('courses')
 export class CoursesController {
-///==========================método construtor para ler o service.ts
-constructor( private readonly _coursesService: CoursesService){}
+  ///==========================método construtor para ler o service.ts
+  constructor(private readonly _coursesService: CoursesService) {}
 
+  ///================================
 
-///================================
-
-  
-  // @HttpCode(HttpStatus.ACCEPTED) 
+  @HttpCode(HttpStatus.ACCEPTED)
   @Get()
   findAll(response) {
-  return `Listagem correta`
-  // return response.send('listagem dos cursos').status();
+    return `Listagem correta`;
+    // return response.send('listagem dos cursos').status();
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
@@ -36,14 +23,14 @@ constructor( private readonly _coursesService: CoursesService){}
     return `Curso numero ${id}`;
   }
 
-  @Post()
   @HttpCode(HttpStatus.ACCEPTED)
+  @Post()
   create(@Body() body) {
     return body;
   }
 
-  @Patch(':id')
   @HttpCode(HttpStatus.ACCEPTED)
+  @Patch(':id')
   patch(@Param('id') id: string, @Body() body) {
     return `Curso atualizado ${id}`;
   }

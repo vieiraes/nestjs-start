@@ -7,4 +7,3 @@ export class enttCourse{
 
 
 }
-//#TODO continuar de assistir os videos  https://www.youtube.com/watch?v=bQ3W2auMWsQ&list=PLE0DHiXlN_qqRNX4KpkNKvFswCXHUwoyL&index=8

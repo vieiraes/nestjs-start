@@ -55,7 +55,7 @@ export class CoursesService {
     this.var_dbcourses[indiceCurso] = updateCourseDTO;
   }
 
-  removeOneCourse(id: string) {
+  deleteOneCourse(id: string) {
     const indiceCurso = this.var_dbcourses.findIndex(
       (_course) => _course.id === Number(id),
     );

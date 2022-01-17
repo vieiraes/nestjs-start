@@ -5,40 +5,38 @@ import { CoursesService } from './courses.service';
 // ROTA /courses
 @Controller('courses')
 export class CoursesController {
-  ///==========================método construtor para ler o service.ts
+  ///==================== abaixo método construtor para ler o service.ts
   constructor(private readonly _coursesService: CoursesService) {}
-
   ///================================
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Get()
   findAll(response) {
-    return `Listagem correta`;
-    // return response.send('listagem dos cursos').status();
+    return this._coursesService.findAll();
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return `Curso numero ${id}`;
+  findOne(@Param('id') id) {
+    return this._coursesService.findOne(id);
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Post()
   create(@Body() body) {
-    return body;
+    return this._coursesService.createNewCourse(body); 
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Patch(':id')
   patch(@Param('id') id: string, @Body() body) {
-    return `Curso atualizado ${id}`;
+    return this._coursesService.updateOneCourse(id, body);
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Delete(':id')
   deleteOne(@Param('id') id: string) {
-    // return `Listagem correta`
-    return `Deleção do item ${id}`;
+    return this._coursesService.deleteOneCourse(id);
+  
   }
 }

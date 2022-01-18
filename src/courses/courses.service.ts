@@ -1,6 +1,8 @@
-import { Injectable, Param } from '@nestjs/common';
+import { HttpException, Injectable, HttpStatus } from '@nestjs/common';
 
 import { enttCourse } from './entities/course.entity';
+
+
 
 //controller é courses.controller.ts
 // pra injetar um serviço num controller, precisa ir noarquivo de controller e aplicar o
@@ -34,20 +36,29 @@ export class CoursesService {
     // var_dbcourses contem todos os regitros no service.ts
     // as regras de como devem ser estruturados os dados estão na ENTIDADE courses.entity.ts
   }
-
-  //
+  
   findOne(id: string) {
-    return this.var_dbcourses.find(
-      (_course: enttCourse) => _course.id === Number(id),
-    );
-  }
+    const retorno = this.var_dbcourses.find((_course: enttCourse) => _course.id== Number(id)
+      );
+     if (!retorno){
+         throw new HttpException(`Course not found: ${id}`, HttpStatus.NOT_FOUND);
+         
+        }
 
+       return retorno;
+     
+       
+
+
+      }
+      
   createNewCourse(createCourseDTO: any) {
     return this.var_dbcourses.push(createCourseDTO);
   }
 
+   // #TODO: resolver o bug do patch que esta substituindo todo body 
   updateOneCourse(id: string, updateCourseDTO: any) {
-    // encontrar o id refente
+ 
     const indiceCurso = this.var_dbcourses.findIndex(
       (_course) => _course.id === Number(id),
     );

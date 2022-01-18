@@ -1,11 +1,11 @@
-GET http://localhost:3000
+GET http://localhost:3000 HTTP/1.1
 
 ###
 
-GET http://localhost:3000/courses
+GET http://localhost:3000/courses 
 
 ###
-GET http://localhost:3000/courses/3
+GET http://localhost:3000/courses/32 
 
 ###
 PATCH http://localhost:3000/courses/12
@@ -17,15 +17,16 @@ content-type: application/json
 }
 
 ###
-DELETE  http://localhost:3000/courses/1
+DELETE  http://localhost:3000/courses/1 
 
 ###
-POST http://localhost:3000/courses 
-
+POST http://localhost:3000/courses
+ 
 content-type: application/json
 {
-    id: 1,
-    name: 'Fundamentos do Framwork NESTJS',
-    description: 'Fundamentos do NESTJS',
-    tags: ['node.js', 'nestjs', 'javascript'],
+    "id": 1,
+    "name": "Fundamentos do Framwork NESTJS",
+    "description": "Fundamentos do NESTJS",
+    "tags": ["node.js", "nestjs", "javasript""]
+
 }

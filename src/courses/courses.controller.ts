@@ -11,7 +11,7 @@ export class CoursesController {
 
   @HttpCode(HttpStatus.ACCEPTED)
   @Get()
-  findAll(response) {
+  findAll() {
     return this._coursesService.findAll();
   }
 
@@ -26,7 +26,7 @@ export class CoursesController {
   create(@Body() body) {
     return this._coursesService.createNewCourse(body); 
   }
-
+ 
   @HttpCode(HttpStatus.ACCEPTED)
   @Patch(':id')
   patch(@Param('id') id: string, @Body() body) {

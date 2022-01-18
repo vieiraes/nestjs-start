@@ -1,5 +1,7 @@
 {
     "editor.fontFamily": "'Fira Code Bold','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.wordWrap": "bounded",
-    "editor.columnSelection": false
+    "editor.columnSelection": false,
+    "rest-client.previewResponseInUntitledDocument": true,
+    "rest-client.previewResponsePanelTakeFocus": false
 }

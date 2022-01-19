@@ -39,4 +39,3 @@ lerna-debug.log*
 *.tmp.ts
 *.tmp.js
 *.tmp.json
-src/cats

@@ -3,5 +3,9 @@
     "editor.wordWrap": "bounded",
     "editor.columnSelection": false,
     "rest-client.previewResponseInUntitledDocument": true,
-    "rest-client.previewResponsePanelTakeFocus": false
+    "rest-client.previewResponsePanelTakeFocus": false,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "prettier.printWidth": 120,
+    "dart.lineLength": 120
 }

@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post } from '@nestjs/common';
 
-import { CoursesService } from './courses.service';
+import { CoursesService } from '../providers/courses.service'
 
-// ROTA /courses
+
 @Controller('courses')
 export class CoursesController {
   ///==================== abaixo método construtor para ler o service.ts

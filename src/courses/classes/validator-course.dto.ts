@@ -1,5 +1,11 @@
 import { IsString } from 'class-validator';
 
+//DTO se cria como CLASS no NESTJS
+// tive que fazer o import na mao
+//DTO usado pra definir intercaes ous informacoes no payload da requisição
+// nao possui logica de negocio
+// class simples usado pra tipas os daddos
+// nao precisa criar testes
 
 export class ValidatorCourseDTO {
     

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "nest",
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "'Fira Code Bold','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+		"editor.wordWrap": "bounded",
+		"editor.columnSelection": false
+	}
+}

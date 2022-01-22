@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { CoursesModule } from 'src/courses/courses.module';
+import { CoursesModule } from '../courses/modules/courses.module'
 
-// importar todos os controller da solucao inteira
-import { CoursesService } from '../courses/providers/courses.service';
-import { CoursesController } from '../courses/controllers/courses.controller';
-
+//Modulo nao importa CONTROLLER NEM SERVICE
+//MODULO Main só importa modulo filho
 @Module({
     imports: [CoursesModule], // modulo importanto modulo
 
-    controllers: [CoursesController],
-    providers: [CoursesService], //providers = services
+    controllers: [],
+    providers: [], //providers = services
 })
-export class AppModule { }
+export class AppModule {
+
+}

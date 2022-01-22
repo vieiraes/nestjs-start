@@ -1,6 +1,6 @@
 import { HttpException, Injectable, HttpStatus } from '@nestjs/common';
 
-import { enttCourse } from '../entities/course.entity'
+import { enttCourse } from '../classes/course.entity';
 
 
 
@@ -44,17 +44,16 @@ export class CoursesService {
          throw new HttpException(`Course not found: ${id}`, HttpStatus.NOT_FOUND);
          
         }
-
        return retorno;
-     
-       
-
 
       }
       
   createNewCourse(createCourseDTO: any) {
-    return this.var_dbcourses.push(createCourseDTO);
+    this.var_dbcourses.push(createCourseDTO);
+    return createCourseDTO
   }
+
+
 
    // #TODO: resolver o bug do patch que esta substituindo todo body 
   updateOneCourse(id: string, updateCourseDTO: any) {

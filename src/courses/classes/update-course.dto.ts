@@ -1,7 +1,7 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { ValidatorCourseDTO } from './validator-course.dto';
+import { PropertiesCourseDTO } from '../classes/properties-course.dto';
 
-
-export class UpdateCourseDto extends PartialType(ValidatorCourseDTO){}
+//para usar o PartialTypes precisa do pacote mapped-types
+export class UpdateCourseDto extends PartialType(PropertiesCourseDTO){}
 
 
